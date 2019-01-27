@@ -3,6 +3,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "./app.component";
 
 describe("AppComponent", () => {
+  const controller = new AppComponent();
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -23,13 +24,13 @@ describe("AppComponent", () => {
   it(`should have as title 'ng-angular-demo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual("ng-angular-demo");
+    expect(app.title).toEqual(controller.title);
   });
 
   it("should render title in a h1 tag", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector("h1").textContent).toContain("Welcome to ng-angular-demo!");
+    expect(compiled.querySelector("h1").textContent).toContain(controller.title);
   });
 });

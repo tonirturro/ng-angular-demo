@@ -3,7 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { BasicComponent } from "./basic/basic.component";
 import { AccordionComponent } from "./accordion/accordion.component";
 
-const routes: Routes = [
+export const routes: Routes = [
+  { path: "", redirectTo: "basic", pathMatch: "full" },
   { path: "basic", component: BasicComponent },
   { path: "accordion", component: AccordionComponent }
 ];
