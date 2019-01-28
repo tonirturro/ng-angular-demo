@@ -1,0 +1,39 @@
+<h1 class="component-title">{{title}}</h1>
+<div class="container">
+  <h2>Basic Alert</h2>
+  <hr>
+  <p>
+    <ngb-alert [dismissible]="false">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+  </p>
+  <h2>Closable Alert</h2>
+  <hr>
+  <p *ngFor="let alert of alerts">
+    <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+  </p>
+  <p>
+    <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+  </p>
+  <h2>Self closing alert</h2>
+  <hr>
+  <p>
+    Static self-closing alert that disappears after 20 seconds (refresh the page if it has already disappeared)
+  </p>
+  <ngb-alert *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true">Check out our awesome new features!</ngb-alert>
+
+  <hr />
+
+  <p>
+    Show a self-closing success message that disappears after 5 seconds.
+  </p>
+  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+  <p>
+    <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+  </p>
+  <h2>Custom alert</h2>
+  <hr>
+  <p>
+    <ngb-alert type="custom" [dismissible]="false"><strong>Whoa!</strong> This is a custom alert.</ngb-alert>
+  </p>
+</div>
