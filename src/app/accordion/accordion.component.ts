@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { NgbPanelChangeEvent } from "@ng-bootstrap/ng-bootstrap";
+import { NgbPanelChangeEvent } from "src/ui-lib";
+
 
 @Component({
   selector: "app-accordion",
