@@ -8,6 +8,7 @@ import {
 } from "@angular/platform-browser-dynamic/testing";
 
 declare const require: any;
+import "./jasmine.config";
 
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(

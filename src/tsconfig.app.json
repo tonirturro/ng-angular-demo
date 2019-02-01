@@ -6,6 +6,8 @@
   },
   "exclude": [
     "test.ts",
+    "jasmine.config.ts",
+    "**/common.ts",
     "**/*.spec.ts"
   ]
 }
