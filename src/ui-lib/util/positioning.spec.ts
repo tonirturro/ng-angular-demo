@@ -6,6 +6,7 @@ describe("Positioning", () => {
   const bodyMargin = document.body.style.margin;
   const bodyHeight = document.body.style.height;
   const bodyWidth = document.body.style.width;
+  let elementTopPosition: number;
 
   function createElement(height: number, width: number, marginTop: number, marginLeft: number): HTMLElement {
     const el = document.createElement("div");
@@ -18,23 +19,39 @@ describe("Positioning", () => {
     return el;
   }
 
-  const element = createElement(200, 300, 100, 150);
-  document.body.appendChild(element);
+  const topOffset = 100;
+  const element = createElement(200, 300, topOffset, 150);
   const targetElement = createElement(50, 100, 10, 20);
-  document.body.appendChild(targetElement);
 
-  document.documentElement.style.margin = "0";
-  document.body.style.margin = "0";
-  document.body.style.height = "2000px";
-  document.body.style.width = "2000px";
+  beforeAll(() => {
+    document.body.appendChild(element);
+    document.body.appendChild(targetElement);
+    document.documentElement.style.margin = "0";
+    document.body.style.margin = "0";
+    document.body.style.height = "2000px";
+    document.body.style.width = "2000px";
+  });
+
+  afterAll(() => {
+    document.body.removeChild(element);
+    document.body.removeChild(targetElement);
+    document.documentElement.style.margin = documentMargin;
+    document.body.style.margin = bodyMargin;
+    document.body.style.height = bodyHeight;
+    document.body.style.width = bodyWidth;
+  });
+
+  beforeEach(() => {
+    elementTopPosition = element.offsetTop - topOffset;
+  });
 
   it("should calculate the element offset", () => {
     const position = positioning.offset(element);
 
     expect(position.height).toBe(200);
     expect(position.width).toBe(300);
-    expect(position.top).toBe(100);
-    expect(position.bottom).toBe(300);
+    expect(position.top).toBe(100 + elementTopPosition);
+    expect(position.bottom).toBe(300 + elementTopPosition);
     expect(position.left).toBe(150);
     expect(position.right).toBe(450);
   });
@@ -45,8 +62,8 @@ describe("Positioning", () => {
 
     const position = positioning.offset(element);
 
-    expect(position.top).toBe(100);
-    expect(position.bottom).toBe(300);
+    expect(position.top).toBe(100 + elementTopPosition);
+    expect(position.bottom).toBe(300 + elementTopPosition);
     expect(position.left).toBe(150);
     expect(position.right).toBe(450);
 
@@ -59,8 +76,8 @@ describe("Positioning", () => {
 
     expect(position.height).toBe(200);
     expect(position.width).toBe(300);
-    expect(position.top).toBe(100);
-    expect(position.bottom).toBe(300);
+    expect(position.top).toBe(100 + elementTopPosition);
+    expect(position.bottom).toBe(300 + elementTopPosition);
     expect(position.left).toBe(150);
     expect(position.right).toBe(450);
   });
@@ -71,8 +88,8 @@ describe("Positioning", () => {
 
     const position = positioning.position(element);
 
-    expect(position.top).toBe(100);
-    expect(position.bottom).toBe(300);
+    expect(position.top).toBe(100 + elementTopPosition);
+    expect(position.bottom).toBe(300 + elementTopPosition);
     expect(position.left).toBe(150);
     expect(position.right).toBe(450);
 
@@ -100,93 +117,84 @@ describe("Positioning", () => {
   it("should position the element top-left", () => {
     const position = positioning.positionElements(element, targetElement, "top-left");
 
-    expect(position.top).toBe(50);
+    expect(position.top).toBe(50 + elementTopPosition);
     expect(position.left).toBe(150);
   });
 
   it("should position the element top-center", () => {
     const position = positioning.positionElements(element, targetElement, "top");
 
-    expect(position.top).toBe(50);
+    expect(position.top).toBe(50 + elementTopPosition);
     expect(position.left).toBe(250);
   });
 
   it("should position the element top-right", () => {
     const position = positioning.positionElements(element, targetElement, "top-right");
 
-    expect(position.top).toBe(50);
+    expect(position.top).toBe(50 + elementTopPosition);
     expect(position.left).toBe(350);
   });
 
   it("should position the element bottom-left", () => {
     const position = positioning.positionElements(element, targetElement, "bottom-left");
 
-    expect(position.top).toBe(300);
+    expect(position.top).toBe(300 + elementTopPosition);
     expect(position.left).toBe(150);
   });
 
   it("should position the element bottom-center", () => {
     const position = positioning.positionElements(element, targetElement, "bottom");
 
-    expect(position.top).toBe(300);
+    expect(position.top).toBe(300 + elementTopPosition);
     expect(position.left).toBe(250);
   });
 
   it("should position the element bottom-right", () => {
     const position = positioning.positionElements(element, targetElement, "bottom-right");
 
-    expect(position.top).toBe(300);
+    expect(position.top).toBe(300 + elementTopPosition);
     expect(position.left).toBe(350);
   });
 
   it("should position the element left-top", () => {
     const position = positioning.positionElements(element, targetElement, "left-top");
 
-    expect(position.top).toBe(100);
+    expect(position.top).toBe(100 + elementTopPosition);
     expect(position.left).toBe(50);
   });
 
   it("should position the element left-center", () => {
     const position = positioning.positionElements(element, targetElement, "left");
 
-    expect(position.top).toBe(175);
+    expect(position.top).toBe(175 + elementTopPosition);
     expect(position.left).toBe(50);
   });
 
   it("should position the element left-bottom", () => {
     const position = positioning.positionElements(element, targetElement, "left-bottom");
 
-    expect(position.top).toBe(250);
+    expect(position.top).toBe(250 + elementTopPosition);
     expect(position.left).toBe(50);
   });
 
   it("should position the element right-top", () => {
     const position = positioning.positionElements(element, targetElement, "right-top");
 
-    expect(position.top).toBe(100);
+    expect(position.top).toBe(100 + elementTopPosition);
     expect(position.left).toBe(450);
   });
 
   it("should position the element right-center", () => {
     const position = positioning.positionElements(element, targetElement, "right");
 
-    expect(position.top).toBe(175);
+    expect(position.top).toBe(175 + elementTopPosition);
     expect(position.left).toBe(450);
   });
 
   it("should position the element right-bottom", () => {
     const position = positioning.positionElements(element, targetElement, "right-bottom");
 
-    expect(position.top).toBe(250);
+    expect(position.top).toBe(250 + elementTopPosition);
     expect(position.left).toBe(450);
-  });
-
-  it("cleanUp", () => {
-    document.body.removeChild(element);
-    document.body.removeChild(targetElement);
-    document.documentElement.style.margin = documentMargin;
-    document.body.style.margin = bodyMargin;
-    document.body.style.height = bodyHeight;
-    document.body.style.width = bodyWidth;
   });
 });
