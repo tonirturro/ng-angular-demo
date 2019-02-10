@@ -13,6 +13,7 @@ import { ButtonsCheckboxComponent } from "./buttons/buttons-checkbox/buttons-che
 import { ButtonsCheckboxReactiveComponent } from "./buttons/buttons-checkboxreactive/buttons-checkboxreactive";
 import { ButtonsRadioComponent } from "./buttons/radio/buttons-radio";
 import { ButtonsRadioReactiveComponent } from "./buttons/radioreactive/buttons-radioreactive";
+import { CarouselComponent } from "./carousel/carousel.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ButtonsRadioReactiveComponent } from "./buttons/radioreactive/buttons-r
     ButtonsCheckboxComponent,
     ButtonsCheckboxReactiveComponent,
     ButtonsRadioComponent,
-    ButtonsRadioReactiveComponent
+    ButtonsRadioReactiveComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
