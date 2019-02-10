@@ -15,6 +15,7 @@ import { ButtonsRadioComponent } from "./buttons/radio/buttons-radio";
 import { ButtonsRadioReactiveComponent } from "./buttons/radioreactive/buttons-radioreactive";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     ButtonsRadioComponent,
     ButtonsRadioReactiveComponent,
     CarouselComponent,
-    DropdownComponent
+    DropdownComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

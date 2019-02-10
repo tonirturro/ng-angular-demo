@@ -6,6 +6,7 @@ import { AlertComponent } from "./alert/alert.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DropdownComponent } from "./dropdown/dropdown.component";
+import { ModalComponent } from "./modal/modal.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "basic", pathMatch: "full" },
@@ -14,7 +15,8 @@ export const routes: Routes = [
   { path: "alert", component: AlertComponent },
   { path: "button", component: ButtonsComponent },
   { path: "carousel", component: CarouselComponent },
-  { path: "dropdown", component: DropdownComponent }
+  { path: "dropdown", component: DropdownComponent },
+  { path: "modal", component: ModalComponent }
 ];
 
 @NgModule({
