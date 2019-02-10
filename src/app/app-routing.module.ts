@@ -5,6 +5,7 @@ import { AccordionComponent } from "./accordion/accordion.component";
 import { AlertComponent } from "./alert/alert.component";
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { DropdownComponent } from "./dropdown/dropdown.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "basic", pathMatch: "full" },
@@ -12,7 +13,8 @@ export const routes: Routes = [
   { path: "accordion", component: AccordionComponent },
   { path: "alert", component: AlertComponent },
   { path: "button", component: ButtonsComponent },
-  { path: "carousel", component: CarouselComponent }
+  { path: "carousel", component: CarouselComponent },
+  { path: "dropdown", component: DropdownComponent }
 ];
 
 @NgModule({
