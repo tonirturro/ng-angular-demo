@@ -11,6 +11,7 @@ import { CollapseComponent } from "./collapse/collapse.component";
 import { PopoverComponent } from "./popover/popover.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { TooltipComponent } from "./tooltip/tooltip.component";
+import { TableComponent } from "./table/table.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "basic", pathMatch: "full" },
@@ -24,6 +25,7 @@ export const routes: Routes = [
   { path: "modal", component: ModalComponent },
   { path: "popover", component: PopoverComponent },
   { path: "progressbar", component: ProgressbarComponent },
+  { path: "table", component: TableComponent },
   { path: "tooltip", component: TooltipComponent }
 ];
 

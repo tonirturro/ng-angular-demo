@@ -20,6 +20,7 @@ import { CollapseComponent } from "./collapse/collapse.component";
 import { PopoverComponent } from "./popover/popover.component";
 import { ProgressbarComponent } from "./progressbar/progressbar.component";
 import { TooltipComponent } from "./tooltip/tooltip.component";
+import { TableComponent } from "./table/table.component";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TooltipComponent } from "./tooltip/tooltip.component";
     CollapseComponent,
     PopoverComponent,
     ProgressbarComponent,
-    TooltipComponent
+    TooltipComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
