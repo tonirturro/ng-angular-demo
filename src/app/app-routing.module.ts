@@ -9,6 +9,8 @@ import { DropdownComponent } from "./dropdown/dropdown.component";
 import { ModalComponent } from "./modal/modal.component";
 import { CollapseComponent } from "./collapse/collapse.component";
 import { PopoverComponent } from "./popover/popover.component";
+import { ProgressbarComponent } from "./progressbar/progressbar.component";
+import { TooltipComponent } from "./tooltip/tooltip.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "basic", pathMatch: "full" },
@@ -20,7 +22,9 @@ export const routes: Routes = [
   { path: "collapse", component: CollapseComponent },
   { path: "dropdown", component: DropdownComponent },
   { path: "modal", component: ModalComponent },
-  { path: "popover", component: PopoverComponent }
+  { path: "popover", component: PopoverComponent },
+  { path: "progressbar", component: ProgressbarComponent },
+  { path: "tooltip", component: TooltipComponent }
 ];
 
 @NgModule({

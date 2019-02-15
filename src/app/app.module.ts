@@ -14,10 +14,12 @@ import { ButtonsCheckboxReactiveComponent } from "./buttons/buttons-checkboxreac
 import { ButtonsRadioComponent } from "./buttons/radio/buttons-radio";
 import { ButtonsRadioReactiveComponent } from "./buttons/radioreactive/buttons-radioreactive";
 import { CarouselComponent } from "./carousel/carousel.component";
-import { DropdownComponent } from './dropdown/dropdown.component';
-import { ModalComponent } from './modal/modal.component';
-import { CollapseComponent } from './collapse/collapse.component';
-import { PopoverComponent } from './popover/popover.component';
+import { DropdownComponent } from "./dropdown/dropdown.component";
+import { ModalComponent } from "./modal/modal.component";
+import { CollapseComponent } from "./collapse/collapse.component";
+import { PopoverComponent } from "./popover/popover.component";
+import { ProgressbarComponent } from "./progressbar/progressbar.component";
+import { TooltipComponent } from "./tooltip/tooltip.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { PopoverComponent } from './popover/popover.component';
     DropdownComponent,
     ModalComponent,
     CollapseComponent,
-    PopoverComponent
+    PopoverComponent,
+    ProgressbarComponent,
+    TooltipComponent
   ],
   imports: [
     BrowserModule,

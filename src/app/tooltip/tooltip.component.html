@@ -1,0 +1,28 @@
+<h1 class="component-title">{{title}}</h1>
+<div class="container">
+  <h3>Basic</h3>
+  <hr>
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="top" ngbTooltip="Tooltip on top">
+    Tooltip on top
+  </button>
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="right" ngbTooltip="Tooltip on right">
+    Tooltip on right
+  </button>
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="bottom" ngbTooltip="Tooltip on bottom">
+    Tooltip on bottom
+  </button>
+  <button type="button" class="btn btn-outline-secondary mr-2" placement="left" ngbTooltip="Tooltip on left">
+    Tooltip on left
+  </button>
+  <hr>
+  <h3>HTLM content</h3>
+  <hr>
+  <p>
+    Tooltips can contain any arbitrary HTML, Angular bindings and even directives!
+    Simply enclose desired content in a <code>&lt;ng-template&gt;</code> element.
+  </p>
+  <ng-template #tipContent>Hello, <b>{{name}}</b>!</ng-template>
+  <button type="button" class="btn btn-outline-secondary" [ngbTooltip]="tipContent">
+    I've got markup and bindings in my tooltip!
+  </button>
+</div>
