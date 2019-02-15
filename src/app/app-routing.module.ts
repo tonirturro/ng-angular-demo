@@ -7,6 +7,8 @@ import { ButtonsComponent } from "./buttons/buttons.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { DropdownComponent } from "./dropdown/dropdown.component";
 import { ModalComponent } from "./modal/modal.component";
+import { CollapseComponent } from "./collapse/collapse.component";
+import { PopoverComponent } from "./popover/popover.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "basic", pathMatch: "full" },
@@ -15,8 +17,10 @@ export const routes: Routes = [
   { path: "alert", component: AlertComponent },
   { path: "button", component: ButtonsComponent },
   { path: "carousel", component: CarouselComponent },
+  { path: "collapse", component: CollapseComponent },
   { path: "dropdown", component: DropdownComponent },
-  { path: "modal", component: ModalComponent }
+  { path: "modal", component: ModalComponent },
+  { path: "popover", component: PopoverComponent }
 ];
 
 @NgModule({
